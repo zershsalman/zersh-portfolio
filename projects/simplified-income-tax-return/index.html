@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Scaling tax compliance through service design, a case study by Zersh Salman.">
+    <title>Scaling tax compliance through service design | Zersh Salman</title>
+    <link rel="stylesheet" href="/styles.css?v=106">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/"><span>Zersh Salman</span><span>Product Designer</span></a>
+      <nav aria-label="Primary navigation">
+        <a href="/" aria-current="page">Work</a>
+        <a href="/fun/">Fun</a>
+        <a href="/about/">About</a>
+        <a href="/assets/Zersh-Salman-Resume.pdf">Resume</a>
+      </nav>
+    </header>
+
+    <main class="case-page">
+      <aside class="case-side-nav" aria-label="Case study sections">
+        <a class="back-link" href="/">&#8592; Back</a>
+        <nav>
+          <a href="#overview">Overview</a>
+          <a href="#design-goals">Design Goals</a>
+          <a href="#solution">Solution</a>
+          <a href="#understanding-domain">Understanding the Domain</a>
+          <a href="#design-decisions">Design Decisions</a>
+          <a href="#prototyping-testing">Prototyping &amp; Testing</a>
+          <a href="#documentation">Documentation</a>
+          <a href="#reflection">Reflection</a>
+        </nav>
+      </aside>
+
+      <article class="case-content">
+        <section class="case-hero" id="overview">
+          <p class="case-kicker">FCDO x ASI x FBR &bull; Shipped 2025</p>
+          <h1>Scaling tax compliance through service design</h1>
+          <div class="case-visual media-cool">
+            <span>Scaling tax compliance through service design</span>
+          </div>
+          <dl class="case-detail-grid">
+            <div>
+              <dt>Role</dt>
+              <dd>Service Designer</dd>
+            </div>
+            <div>
+              <dt>Timeline</dt>
+              <dd>March — September 2025</dd>
+            </div>
+            <div>
+              <dt>Team</dt>
+              <dd>2 UI Designers<br>1 UX Designer<br>1 Service Design Lead</dd>
+            </div>
+            <div>
+              <dt>Skills</dt>
+              <dd>Conceptual Modelling<br>Service Design<br>UX Writing<br>Prototyping<br>Design Documentation</dd>
+            </div>
+          </dl>
+
+          <section class="case-overview">
+            <p class="case-section-label">Overview</p>
+            <h2>What if the most anxiety-inducing civic obligation could feel as simple as filling out a form?</h2>
+            <p>In a country where only ~2% of the population files taxes, the barrier isn't just awareness. It's the experience itself. The existing system buried salaried filers under 40+ form variants, 750 data fields, and a process that assumed professional assistance as a default.</p>
+          </section>
+
+          <section class="case-overview" id="problem">
+            <p class="case-section-label">Problem</p>
+            <h2>The form knew tax codes. It didn't know the taxpayer.</h2>
+            <div class="case-section-copy">
+              <p>Every taxpayer — salaried employee, pensioner, sole proprietor, corporate director — was handed the same form. Not because the system was poorly maintained, but because it was never designed around the person on the other end. It had no concept of relevance. No logic for what applied to whom.</p>
+              <img class="case-section-graphic" src="/assets/problem-framing.svg" alt="Problem framing diagram illustrating the complexity of the existing tax return experience.">
+              <p>The result was a service that had quietly outsourced its own usability failure. If you couldn't navigate it alone, you hired someone who could. Practitioner dependency inevitably became the human layer that absorbed all the complexity the system failed to resolve.</p>
+            </div>
+          </section>
+
+          <section class="case-overview" id="opportunity">
+            <p class="case-section-label">Opportunity</p>
+            <h2>A once-in-a-generation chance to rewire tax filing for 12 million people.</h2>
+            <p>This was national scale service design, not a patch on a broken system. Fix the experience for the right people, in the right way, and compliance doesn't just improve. It compounds.</p>
+
+            <div class="opportunity-grid">
+              <article>
+                <h3>The neglected majority</h3>
+                <p>99.83% of the people the system was built for couldn't use it effectively without help. The biggest lever for tax compliance wasn't enforcement. It was usability.</p>
+              </article>
+              <article>
+                <h3>A deliberate entry point</h3>
+                <p>Salaried persons and pensioners have the most consistent, predictable taxpayer profile in the system. The least ambiguity. The most to gain from self-service. The right place to prove the model before scaling it.</p>
+              </article>
+              <article>
+                <h3>Compliance growth</h3>
+                <p>A self-serviceable tax return doesn't just help existing filers more confidently. It removes the single biggest barrier stopping new ones from starting at all.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="case-overview" id="design-goals">
+            <p class="case-section-label">Design Goals</p>
+            <h2>Three design goals shaping every decision that followed.</h2>
+            <p>While there were numerous goals and priorities for the redesigned income tax return service, as outlined below.</p>
+            <img class="design-framework-graphic" src="/assets/service-design-framework.png" alt="Service design framework showing fifteen principles that shaped the redesigned return filing experience.">
+            <p>There were three key service design goals that we intended to achieve through the redesign.</p>
+
+            <div class="design-goal-list">
+              <article class="design-goal-row">
+                <div class="video-demo" data-video-demo>
+                  <video class="design-goal-video" src="/assets/videos/simplified-return-unification-v2.mp4" width="458" height="286" autoplay muted loop playsinline preload="metadata"></video>
+                  <div class="video-controls" aria-label="Video controls">
+                    <button class="video-control" type="button" data-video-toggle aria-label="Pause video">Ⅱ</button>
+                    <button class="video-control" type="button" data-video-replay aria-label="Replay video">↻</button>
+                  </div>
+                </div>
+                <div>
+                <h3>Unification</h3>
+                  <p>Over 40 filing options had accumulated over time. Each created to solve a specific problem, unintentionally resulting in larger complexity. We must consolidate them into a single, unified filing experience.</p>
+                </div>
+              </article>
+              <article class="design-goal-row">
+                <div class="video-demo" data-video-demo>
+                  <video class="design-goal-video" src="/assets/videos/simplified-return-customisation.mp4" width="458" height="286" autoplay muted loop playsinline preload="metadata"></video>
+                  <div class="video-controls" aria-label="Video controls">
+                    <button class="video-control" type="button" data-video-toggle aria-label="Pause video">Ⅱ</button>
+                    <button class="video-control" type="button" data-video-replay aria-label="Replay video">↻</button>
+                  </div>
+                </div>
+                <div>
+                  <h3>Customisation</h3>
+                  <p>The existing system displayed nearly 800 fields to every user, regardless of relevance. The redesign needed to show only what applies to each person's taxpayer profile, income sources, and filing needs.</p>
+                </div>
+              </article>
+              <article class="design-goal-row">
+                <div class="video-demo" data-video-demo>
+                  <video class="design-goal-video" src="/assets/videos/simplified-return-structured-data.mov" width="458" height="286" autoplay muted loop playsinline preload="metadata"></video>
+                  <div class="video-controls" aria-label="Video controls">
+                    <button class="video-control" type="button" data-video-toggle aria-label="Pause video">Ⅱ</button>
+                    <button class="video-control" type="button" data-video-replay aria-label="Replay video">↻</button>
+                  </div>
+                </div>
+                <div>
+                  <h3>Structured data architecture</h3>
+                  <p>Every field was designed to capture data in a structured, standardised format. We aimed to build a system that's ready to receive future data integrations, pre-filling fields automatically rather than requiring manual entry.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <section class="case-overview" id="solution">
+          <p class="case-section-label">Solution</p>
+          <h2>Simplified Income Tax Return: A guided, personalised filing experience that shows only what applies to you.</h2>
+          <p class="solution-subheading">A return built around Pakistan's most common taxpayer, aligned with FBR's objectives and the Prime Minister's tax digitalisation initiative.</p>
+          <div class="video-demo video-demo--wide" data-video-demo>
+            <video class="design-goal-video solution-video" src="/assets/videos/simplified-return-solution-overview.mp4" autoplay muted loop playsinline preload="metadata"></video>
+            <div class="video-controls" aria-label="Video controls">
+              <button class="video-control" type="button" data-video-toggle aria-label="Pause video">Ⅱ</button>
+              <button class="video-control" type="button" data-video-replay aria-label="Replay video">↻</button>
+            </div>
+          </div>
+          <p class="case-section-label solution-feature-label">Core Features</p>
+          <div class="solution-pointer-list">
+            <article class="design-goal-row">
+              <div class="video-demo" data-video-demo>
+                <video class="design-goal-video" src="/assets/videos/core-flow-1.mp4" width="458" height="286" autoplay muted loop playsinline preload="metadata"></video>
+                <div class="video-controls" aria-label="Video controls">
+                  <button class="video-control" type="button" data-video-toggle aria-label="Pause video">Ⅱ</button>
+                  <button class="video-control" type="button" data-video-replay aria-label="Replay video">↻</button>
+                </div>
+              </div>
+              <div>
+                <h3>A guided filing journey</h3>
+                <p>With step-by-step navigation, the return now tells you where you are, what's next, and when you're done.</p>
+              </div>
+            </article>
+            <article class="design-goal-row">
+              <div class="video-demo" data-video-demo>
+                <video class="design-goal-video" src="/assets/videos/core-flow-2.mp4" width="458" height="286" autoplay muted loop playsinline preload="metadata"></video>
+                <div class="video-controls" aria-label="Video controls">
+                  <button class="video-control" type="button" data-video-toggle aria-label="Pause video">Ⅱ</button>
+                  <button class="video-control" type="button" data-video-replay aria-label="Replay video">↻</button>
+                </div>
+              </div>
+              <div>
+                <h3>Adaptive form personalisation</h3>
+                <p>You select your income sources. The return builds itself around them.</p>
+              </div>
+            </article>
+            <article class="design-goal-row">
+              <div class="video-demo" data-video-demo>
+                <video class="design-goal-video" src="/assets/videos/core-flow-3.mp4" width="458" height="286" autoplay muted loop playsinline preload="metadata"></video>
+                <div class="video-controls" aria-label="Video controls">
+                  <button class="video-control" type="button" data-video-toggle aria-label="Pause video">Ⅱ</button>
+                  <button class="video-control" type="button" data-video-replay aria-label="Replay video">↻</button>
+                </div>
+              </div>
+              <div>
+                <h3>Scalable &amp; modular<br>service architecture</h3>
+                <p>Data entered once, structured correctly, usable downstream.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="case-overview" id="outcomes">
+          <p class="case-section-label">Outcomes</p>
+          <p class="case-section-text outcomes-summary">The Simplified Income Tax Return went live in fiscal year 2025. Covered by national media. Lauded as a milestone in Pakistan's tax digitalisation drive. Featured as part of the country's broader economic reform agenda tied to the IMF programme.</p>
+          <div class="domain-image-grid outcomes-image-grid" aria-label="Outcome image placeholders">
+            <figure>
+              <img src="/assets/outcome-national-meeting.png" alt="Government officials in a meeting discussing national economic and tax reform priorities.">
+              <figcaption>PM Shehbaz Sharif chairing the launch meeting.</figcaption>
+            </figure>
+            <figure>
+              <img src="/assets/outcome-dawn-coverage.png" alt="Dawn coverage mentioning the simplified tax return form launch.">
+              <figcaption>Dawn covers the launch of Simplified Tax Return.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="case-overview" id="understanding-domain">
+          <p class="case-section-label">Understanding the Domain</p>
+          <h2>You can't redesign a return without understanding the tax laws.</h2>
+          <p class="case-section-text">Every section of the redesigned return began with a thorough reading of the relevant sections of the Income Tax Ordinance.</p>
+          <div class="domain-image-grid" aria-label="Domain research images">
+            <figure>
+              <img src="/assets/domain-tax-law-reading.png" alt="Highlighted section of the Income Tax Ordinance used during domain research.">
+              <figcaption>Reading the law before designing for it.</figcaption>
+            </figure>
+            <figure>
+              <img src="/assets/domain-fbr-validation.png" alt="Working session with FBR domain experts validating tax return requirements.">
+              <figcaption>Validation sessions with FBR's domain experts.</figcaption>
+            </figure>
+          </div>
+          <p class="case-section-text">Once we had a working understanding of the legislation, we validated it with the domain experts at FBR. Noting our questions and observations along the way. Only once the requirement and concept was clear and confirmed, did we move to design.</p>
+        </section>
+
+        <section class="case-overview" id="design-decisions">
+          <p class="case-section-label">Design Decisions</p>
+          <h2>Simplifying the experience required complicating the thinking.</h2>
+          <p class="case-section-text">Every screen hides a problem that had to be solved before it could be designed.</p>
+          <div class="full-graphic-placeholder" aria-label="Graphic placeholder"></div>
+          <section class="case-subsection">
+            <p class="case-section-label">Cracking the Property Schema</p>
+            <h2>The discovery: Revenue leakage by design</h2>
+            <p class="case-section-text">Seven different property schemas existed across IRIS. None of them consistent or structured.</p>
+            <img class="case-section-graphic property-schema-graphic" src="/assets/property-data-fields.png" alt="Property data fields across different IRIS schemas.">
+            <p class="case-section-text">FBR couldn't track property values year over year, couldn't link sold properties, couldn't catch undeclared ones. This wasn't just a UX problem. It was causing revenue leakage at a national scale.</p>
+          </section>
+          <section class="case-subsection">
+            <h2>The mapping: Making the invisible visible</h2>
+            <p class="case-section-text">We pulled every instance of property data entry across IRIS and laid them side by side in Mural. Field by field. Noting down each label, requirement, dependency, and data type.</p>
+            <img class="case-section-graphic" src="/assets/data-fields-consolidation.png" alt="Data fields consolidation board mapping property data entry fields across IRIS.">
+            <p class="case-section-text">We carefully reviewed what each schema captured, what conflicted, and what was missing. This exercise turned a vague sense that something was wrong into a precise understanding of what exactly needed to change and why.</p>
+          </section>
+          <section class="case-subsection">
+            <h2>The complication: Every answer uncovered a new question.</h2>
+            <p class="case-section-text">What began as a schema reconciliation problem quickly became something larger. The deeper we went, the more edge cases, dependencies, and unanswered questions emerged. As our understanding evolved, so did the scope of what we needed to design for.</p>
+          </section>
+          <section class="case-subsection">
+            <h3 class="case-small-heading">The system had records. It just couldn't use them.</h3>
+            <p class="case-section-text">Property data declared in previous years was unstructured — just strings of text the system couldn't parse. Taxpayers filing their current return needed to see properties they had declared before, but that historical data was essentially useless in its existing form.</p>
+            <img class="case-section-graphic" src="/assets/historical-property-records.png" alt="Mockups showing how previous property records were transformed into usable property details.">
+            <p class="case-section-text">The task became not just designing for new data, but figuring out how to surface old data back to the taxpayer and get it cleaned up as part of the filing process. All without overwhelming them in the process.</p>
+          </section>
+          <section class="case-subsection">
+            <h3 class="case-small-heading">A new income source that rewrote the problem</h3>
+            <p class="case-section-text">While we were working our this problem, the domain team introduced 'Capital Gain from Sale of Property' as an income source. What followed was a cascade of new problems — sold properties, partial sales, cross-year ownership tracking — each requiring its own design solution.</p>
+            <img class="case-section-graphic" src="/assets/capital-gain-property-sale.png" alt="Mockup for capital gain from sale of property showing sold properties, purchased properties, and design annotations.">
+            <div class="hover-note">
+              <p>The <span>plot thickened</span>. Pun intended.</p>
+              <img src="/assets/plot-thickened-hover.png" alt="">
+            </div>
+          </section>
+          <section class="case-subsection">
+            <h2>The resolution: A unified schema built to last.</h2>
+            <p class="case-section-text">One schema. Every field structured. Every edge case solved.</p>
+            <div class="decision-row-list">
+              <article class="decision-row">
+                <div class="decision-visual-placeholder" aria-label="Visual placeholder"></div>
+                <div>
+                  <h3>One string to twelve structured data fields</h3>
+                  <p>Old data sits at the top as reference. Below it, every property detail captured as a distinct structured field. Better tracking and verification of property ownership.</p>
+                </div>
+              </article>
+              <article class="decision-row">
+                <div class="decision-visual-placeholder" aria-label="Visual placeholder"></div>
+                <div>
+                  <h3>No more ghost properties</h3>
+                  <p>Property sold during the tax year, marked in one step, removed from the wealth statement automatically. What previously had no mechanism now has a clean, consequential interaction built around it.</p>
+                </div>
+              </article>
+              <article class="decision-row">
+                <div class="decision-visual-placeholder" aria-label="Visual placeholder"></div>
+                <div>
+                  <h3>Not every sale is complete</h3>
+                  <p>Partial sales required their own logic. The sold portion is declared and closed. The retained portion carries forward. The taxpayer just marks the percentage, the return does the rest.</p>
+                </div>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <section class="case-overview" id="content-design">
+          <p class="case-section-label">Content Design</p>
+          <h2>Writing for taxpayers who don't speak tax</h2>
+          <p class="case-section-text">Copy was treated with the same rigour as the screens themselves. Every label, instruction, and tooltip was drafted in multiple versions, reviewed for tone and clarity, and tracked meticulously before making it to the final design.</p>
+          <div class="full-graphic-placeholder" aria-label="Content design graphic placeholder"></div>
+          <p class="case-section-text">In Mural, my team lead and I would draft 3-4 versions of the same text string, compare them side by side, and pick the one that felt most natural to a first-time filer. Then we'd walk through the entire journey again to make sure it all sounded like one voice.</p>
+        </section>
+
+        <section class="case-overview" id="prototyping-testing">
+          <p class="case-section-label">Prototyping &amp; Testing</p>
+          <h2>A prototype that worked like the real thing, and a QA process to make sure it did.</h2>
+
+          <section class="case-subsection">
+            <h3 class="case-small-heading">Clickable wasn't enough.</h3>
+            <p class="case-section-text">Time was ticking. We needed an interactive prototype for user testing. One where income figures carried forward across screens, fed calculations, and populated the wealth statement and withholding tax sections in real time. Figma couldn't do the job. So I picked <a class="dotted-link" href="https://www.justinmind.com/" target="_blank" rel="noreferrer">Justinmind</a>.</p>
+            <div class="full-graphic-placeholder" aria-label="Clickable prototype graphic placeholder"></div>
+          </section>
+
+          <section class="case-subsection">
+            <h3 class="case-small-heading">New tool to master in a week</h3>
+            <p class="case-section-text">One week sprint of familiarising myself with the events-based system: if/then conditional logic, global variables, and expression builders. Piece by piece, I replicated every flow. It felt less like prototyping and more like writing code with a visual interface. Surprisingly, I loved every minute of it.</p>
+            <div class="full-graphic-placeholder" aria-label="Justinmind learning sprint graphic placeholder"></div>
+          </section>
+
+          <section class="case-subsection">
+            <h3 class="case-small-heading">117 bugs and counting</h3>
+            <p class="case-section-text">We ended up not having enough time to do user testing before the fiscal year launch deadline. So testing became something else entirely. Systematic, documented, thorough. I identified more than one hundred functional and UI bugs and logged each one into the Azure DevOps environment where the development team operated.</p>
+            <div class="full-graphic-placeholder" aria-label="QA bugs and Azure DevOps graphic placeholder"></div>
+          </section>
+        </section>
+
+        <section class="case-overview" id="documentation">
+          <p class="case-section-label">Documentation</p>
+          <h2>Every screen documented. Every requirement communicated.</h2>
+          <p class="case-section-text">The Figma file was never going to be enough on its own. Every single screen was accompanied by a detailed specification.</p>
+          <div class="video-demo video-demo--wide documentation-video-demo" data-video-demo>
+            <video class="design-goal-video" src="/assets/videos/documentation-video.mov" autoplay muted loop playsinline preload="metadata"></video>
+            <div class="video-controls" aria-label="Video controls">
+              <button class="video-control" type="button" data-video-toggle aria-label="Pause video">Ⅱ</button>
+              <button class="video-control" type="button" data-video-replay aria-label="Replay video">↻</button>
+            </div>
+          </div>
+          <p class="case-section-text documentation-after-text">Once the dev team had both the designs and specs, any remaining ambiguity was resolved through sessions with the front-end, back-end, and QA engineers. My job didn't end at handoff. It ended when the devs had everything they needed to build it right.</p>
+        </section>
+
+        <section class="case-overview" id="reflection">
+          <p class="case-section-label">Reflection</p>
+          <h2>Lessons I learned</h2>
+          <div class="reflection-grid">
+            <article>
+              <h3>Understand first. Design after.</h3>
+              <p>I used to open Figma before I understood the problem. I had to break that habit consciously. The best design decisions I made happened while conceptual modelling in Mural, not in Figma. Weeks before a screen was ever touched.</p>
+            </article>
+            <article>
+              <h3>Think in systems.</h3>
+              <p>Good design at this scale isn't about individual screens. It's about understanding how everything connects: the laws, the data, the user, the overall system.</p>
+            </article>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <p>Designed + coded by Zersh</p>
+      <nav aria-label="Social links">
+        <a href="mailto:zersh.salman19@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/zershsalman/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/z000sh/" target="_blank" rel="noreferrer">Instagram</a>
+      </nav>
+    </footer>
+    <script>
+      document.querySelectorAll("[data-video-demo]").forEach((demo) => {
+        const video = demo.querySelector("video");
+        const toggle = demo.querySelector("[data-video-toggle]");
+        const replay = demo.querySelector("[data-video-replay]");
+
+        const syncToggle = () => {
+          toggle.textContent = video.paused ? "▶" : "Ⅱ";
+          toggle.setAttribute("aria-label", video.paused ? "Play video" : "Pause video");
+        };
+
+        toggle.addEventListener("click", () => {
+          if (video.paused) {
+            video.play();
+          } else {
+            video.pause();
+          }
+          syncToggle();
+        });
+
+        replay.addEventListener("click", () => {
+          video.currentTime = 0;
+          video.play();
+          syncToggle();
+        });
+
+        video.addEventListener("play", syncToggle);
+        video.addEventListener("pause", syncToggle);
+        syncToggle();
+      });
+
+      const sideNavLinks = Array.from(document.querySelectorAll(".case-side-nav nav a[href^='#']"));
+      const sections = sideNavLinks
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+      const setActiveSection = () => {
+        const currentSection = sections.reduce((current, section) => {
+          const sectionTop = section.getBoundingClientRect().top;
+          return sectionTop <= 140 ? section : current;
+        }, sections[0]);
+
+        sideNavLinks.forEach((link) => {
+          link.classList.toggle("is-active", link.getAttribute("href") === `#${currentSection.id}`);
+        });
+      };
+
+      setActiveSection();
+      window.addEventListener("scroll", setActiveSection, { passive: true });
+      window.addEventListener("resize", setActiveSection);
+
+      document.querySelectorAll(".hover-note").forEach((note) => {
+        note.addEventListener("mousemove", (event) => {
+          const rect = note.getBoundingClientRect();
+          note.style.setProperty("--hover-x", `${event.clientX - rect.left}px`);
+          note.style.setProperty("--hover-y", `${event.clientY - rect.top}px`);
+        });
+      });
+    </script>
+  </body>
+</html>
