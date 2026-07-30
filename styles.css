@@ -136,7 +136,7 @@ p {
 
 h1 {
   color: var(--text);
-  font-family: "Tiempos Text", "Tiempos Text Fallback", Georgia, "Times New Roman", serif;
+  font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
   font-size: 56px;
   line-height: 1.03;
   letter-spacing: 0;
@@ -284,7 +284,7 @@ p {
 .project-caption h3 {
   margin: 0;
   color: var(--text);
-  font-family: "Tiempos Text", "Tiempos Text Fallback", Georgia, "Times New Roman", serif;
+  font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
   font-size: 17px;
   font-weight: 400;
   line-height: 1.1;
@@ -456,7 +456,7 @@ p {
 .case-overview h2 {
   margin: 16px 0;
   color: var(--text);
-  font-family: "Tiempos Text", Georgia, "Times New Roman", serif;
+  font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
   font-size: 32px;
   font-weight: 400;
   line-height: 1.1;
@@ -465,7 +465,7 @@ p {
 .case-small-heading {
   margin: 0 0 16px;
   color: var(--text);
-  font-family: "Tiempos Text", Georgia, "Times New Roman", serif;
+  font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
   font-size: 21px;
   font-weight: 400;
   line-height: 1.2;
@@ -509,7 +509,7 @@ p {
   padding: 0 0 0 16px;
   border-left: 2px solid var(--muted);
   color: var(--text);
-  font-family: "Tiempos Text", Georgia, "Times New Roman", serif;
+  font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
   font-size: 21.2px;
   font-style: italic;
   font-weight: 400;
@@ -637,7 +637,7 @@ p {
 .decision-row h3 {
   margin: 0 0 12px;
   color: var(--text);
-  font-family: "Tiempos Text", Georgia, "Times New Roman", serif;
+  font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
   font-size: 21px;
   font-weight: 400;
   line-height: 1.2;
@@ -661,7 +661,7 @@ p {
 .reflection-grid h3 {
   margin: 0 0 16px;
   color: var(--text);
-  font-family: "Tiempos Text", Georgia, "Times New Roman", serif;
+  font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
   font-size: 21px;
   font-weight: 400;
   line-height: 1.2;
@@ -731,7 +731,7 @@ p {
 .opportunity-grid h3 {
   margin: 0 0 16px;
   color: var(--text);
-  font-family: "Tiempos Text", Georgia, "Times New Roman", serif;
+  font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
   font-size: 22px;
   font-weight: 400;
   line-height: 1.15;
@@ -891,7 +891,7 @@ p {
 .design-goal-row h3 {
   margin: 0 0 16px;
   color: var(--text);
-  font-family: "Tiempos Text", Georgia, "Times New Roman", serif;
+  font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
   font-size: 22px;
   font-weight: 400;
   line-height: 1.15;
@@ -911,7 +911,7 @@ p {
 
 .case-placeholder p {
   color: var(--text);
-  font-family: "Tiempos Text", Georgia, "Times New Roman", serif;
+  font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
   font-size: 28px;
   line-height: 1.25;
 }
@@ -967,7 +967,7 @@ dd {
 }
 
 .about-intro h1 {
-  font-family: "Tiempos Text", Georgia, "Times New Roman", serif;
+  font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
   font-size: 56px;
   line-height: 1.08;
   font-weight: 400;
