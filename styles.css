@@ -502,7 +502,8 @@ p {
   font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
   font-size: 21px;
   font-weight: 400;
-  line-height: 1.2;
+  letter-spacing: -.02em;
+  line-height: 1.42857;
 }
 
 .case-overview > p:last-child,
@@ -674,7 +675,8 @@ p {
   font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
   font-size: 21px;
   font-weight: 400;
-  line-height: 1.2;
+  letter-spacing: -.02em;
+  line-height: 1.42857;
 }
 
 .decision-row p {
@@ -698,7 +700,8 @@ p {
   font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
   font-size: 21px;
   font-weight: 400;
-  line-height: 1.2;
+  letter-spacing: -.02em;
+  line-height: 1.42857;
 }
 
 .reflection-grid p {
