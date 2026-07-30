@@ -523,8 +523,14 @@ p {
 }
 
 .dotted-link {
+  color: var(--text);
   text-decoration: underline dotted;
   text-underline-offset: 3px;
+}
+
+.dotted-link:hover,
+.dotted-link:focus-visible {
+  color: var(--accent);
 }
 
 .solution-feature-label {
