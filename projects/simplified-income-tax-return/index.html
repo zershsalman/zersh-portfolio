@@ -404,25 +404,59 @@
           toggle.setAttribute("aria-label", video.paused ? "Play video" : "Pause video");
         };
 
+        const playVideo = () => {
+          const playAttempt = video.play();
+          if (playAttempt?.catch) {
+            playAttempt.catch(() => {});
+          }
+        };
+
         toggle.addEventListener("click", () => {
           if (video.paused) {
-            video.play();
+            video.dataset.userPaused = "false";
+            playVideo();
           } else {
+            video.dataset.userPaused = "true";
             video.pause();
           }
           syncToggle();
         });
 
         replay.addEventListener("click", () => {
+          video.dataset.userPaused = "false";
           video.currentTime = 0;
-          video.play();
+          playVideo();
           syncToggle();
         });
 
+        video.addEventListener("canplay", () => {
+          if (video.dataset.userPaused !== "true") {
+            playVideo();
+          }
+        }, { once: true });
         video.addEventListener("play", syncToggle);
         video.addEventListener("pause", syncToggle);
+        playVideo();
         syncToggle();
       });
+
+      if ("IntersectionObserver" in window) {
+        const videoObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const video = entry.target;
+            if (entry.isIntersecting && video.dataset.userPaused !== "true") {
+              const playAttempt = video.play();
+              if (playAttempt?.catch) {
+                playAttempt.catch(() => {});
+              }
+            }
+          });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll("[data-video-demo] video").forEach((video) => {
+          videoObserver.observe(video);
+        });
+      }
 
       const sideNavLinks = Array.from(document.querySelectorAll(".case-side-nav nav a[href^='#']"));
       const sections = sideNavLinks
