@@ -319,6 +319,7 @@ p {
   font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
   font-size: 17px;
   font-weight: 400;
+  letter-spacing: -.02em;
   line-height: 1.2;
 }
 
