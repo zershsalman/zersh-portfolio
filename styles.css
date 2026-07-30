@@ -767,7 +767,8 @@ p {
   font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
   font-size: 22px;
   font-weight: 400;
-  line-height: 1.15;
+  letter-spacing: -.02em;
+  line-height: 1.42857;
 }
 
 .opportunity-grid p {
@@ -927,7 +928,8 @@ p {
   font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
   font-size: 22px;
   font-weight: 400;
-  line-height: 1.15;
+  letter-spacing: -.02em;
+  line-height: 1.42857;
 }
 
 .design-goal-row p {
