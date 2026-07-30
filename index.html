@@ -46,7 +46,7 @@
         <div class="projects">
           <article class="project-card">
             <a class="project-media project-media--video media-warm" href="/projects/redesigning-pakistans-taxation-services/" aria-label="View Redesigning Pakistan's taxation services">
-              <video src="/assets/videos/redesigning-taxation-cover.mov?v=2" autoplay muted loop playsinline preload="metadata"></video>
+              <video data-src="/assets/videos/redesigning-taxation-cover.mov?v=2" autoplay muted loop playsinline preload="none"></video>
             </a>
             <div class="project-caption">
               <h3>Redesigning Pakistan's taxation services</h3>
@@ -56,7 +56,7 @@
 
           <article class="project-card">
             <a class="project-media project-media--video media-cool" href="/projects/simplified-income-tax-return/" aria-label="View Scaling tax compliance through service design">
-              <video src="/assets/videos/simplified-cover.mov" autoplay muted loop playsinline preload="metadata"></video>
+              <video data-src="/assets/videos/simplified-cover.mov" autoplay muted loop playsinline preload="none"></video>
             </a>
             <div class="project-caption">
               <h3>Scaling tax compliance through service design</h3>
@@ -75,5 +75,35 @@
         <a href="https://www.instagram.com/z000sh/" target="_blank" rel="noreferrer">Instagram</a>
       </nav>
     </footer>
+    <script>
+      const loadAndPlayVideo = (video) => {
+        if (video.dataset.src && !video.src) {
+          video.src = video.dataset.src;
+          video.load();
+        }
+
+        const playAttempt = video.play();
+        if (playAttempt?.catch) {
+          playAttempt.catch(() => {});
+        }
+      };
+
+      const lazyVideos = Array.from(document.querySelectorAll("video[data-src]"));
+
+      if ("IntersectionObserver" in window) {
+        const videoObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              loadAndPlayVideo(entry.target);
+              videoObserver.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: "700px 0px", threshold: 0.01 });
+
+        lazyVideos.forEach((video) => videoObserver.observe(video));
+      } else {
+        lazyVideos.forEach(loadAndPlayVideo);
+      }
+    </script>
   </body>
 </html>
