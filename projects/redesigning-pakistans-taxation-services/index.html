@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Redesigning Pakistan's taxation services, a case study by Zersh Salman.">
+    <title>Redesigning Pakistan's taxation services | Zersh Salman</title>
+    <link rel="stylesheet" href="/styles.css?v=128">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/"><span>Zersh Salman</span><span>Product Designer</span></a>
+      <nav aria-label="Primary navigation">
+        <a href="/" aria-current="page">Work</a>
+        <a href="/about/">About</a>
+        <a href="/assets/Zersh-Salman-Resume.pdf">Resume</a>
+      </nav>
+    </header>
+
+    <main class="case-page">
+      <aside class="case-side-nav" aria-label="Case study sections">
+        <a class="back-link" href="/">&#8592; Back</a>
+        <nav>
+          <a href="#overview">Overview</a>
+        </nav>
+      </aside>
+
+      <article class="case-content">
+        <section class="case-hero" id="overview">
+          <p class="case-kicker">FCDO x ASI x FBR &bull; Handed Off 2026</p>
+          <h1>Redesigning Pakistan's taxation services</h1>
+          <div class="case-visual case-visual--video media-warm">
+            <video src="/assets/videos/redesigning-taxation-cover.mov?v=2" autoplay muted loop playsinline preload="metadata"></video>
+          </div>
+          <dl class="case-detail-grid">
+            <div>
+              <dt>Role</dt>
+              <dd>Product designer</dd>
+            </div>
+            <div>
+              <dt>Timeline</dt>
+              <dd>Oct 2025 - Present</dd>
+            </div>
+            <div>
+              <dt>Team</dt>
+              <dd>1 Team Lead<br>1 Subject Matter Expert<br>3 Designers</dd>
+            </div>
+            <div>
+              <dt>Skills</dt>
+              <dd>Product Design<br>Product Strategy<br>Prototyping<br>Documentation</dd>
+            </div>
+          </dl>
+
+          <section class="case-overview" id="overview-section">
+            <p class="case-section-label">Overview</p>
+            <h2>Rebuilding FBR's digital infrastructure for taxpayers and tax collectors</h2>
+            <p class="case-section-text">As part of the REMIT service design team, I am actively engaged in redesigning the core digital portals through which Pakistan's taxpayers file returns and tax officers manage compliance. Our work covers research through handoff: product strategy, design, prototyping, and documentation.</p>
+            <aside class="case-confidential-callout">
+              This project is confidential, reach out to me directly to learn more!
+            </aside>
+          </section>
+        </section>
+      </article>
+    </main>
+
+    <script>
+      const sections = Array.from(document.querySelectorAll(".case-content [id]"));
+      const navLinks = Array.from(document.querySelectorAll(".case-side-nav nav a"));
+
+      const setActiveSection = () => {
+        const active = sections
+          .map((section) => ({
+            id: section.id,
+            top: Math.abs(section.getBoundingClientRect().top - 120),
+          }))
+          .sort((a, b) => a.top - b.top)[0];
+
+        navLinks.forEach((link) => {
+          link.classList.toggle("is-active", link.getAttribute("href") === `#${active?.id}`);
+        });
+      };
+
+      window.addEventListener("scroll", setActiveSection, { passive: true });
+      window.addEventListener("load", setActiveSection);
+    </script>
+  </body>
+</html>

@@ -12,7 +12,6 @@
       <a class="brand" href="/"><span>Zersh Salman</span><span>Product Designer</span></a>
       <nav aria-label="Primary navigation">
         <a href="/">Work</a>
-        <a href="/fun/">Fun</a>
         <a href="/about/" aria-current="page">About</a>
         <a href="/assets/Zersh-Salman-Resume.pdf">Resume</a>
       </nav>
@@ -25,7 +24,7 @@
 
       <section class="about-copy">
         <p>I think deeply about people, systems, and the spaces where design meets real consequence. Currently most excited about service design at scale, and building things that actually change how people interact with institutions.</p>
-        <p>Open to contract and full-time work starting August 2026. If you're working on something interesting, let's talk.</p>
+        <p>Open to contract and full-time work starting August 2026. If you're working on something interesting, <button class="copy-email-link" type="button" data-email="zersh.salman19@gmail.com">let's talk</button>.</p>
         <p>Outside of design, and being a computer science student, I'm:</p>
         <ul>
           <li>building design community in Lahore</li>
@@ -56,10 +55,10 @@
         </section>
 
         <section class="about-gallery-block">
-          <p>03. SPORTS TRAGIC</p>
+          <p>03. BABY ATHLETE</p>
           <div class="about-image-row" aria-label="Sports enthusiast images">
             <img class="about-sports-run" src="/assets/about-sports-01.png" alt="Zersh running during a marathon.">
-            <img class="about-sports-cycle" src="/assets/about-sports-02.png" alt="Road bike parked by a green field.">
+            <img class="about-sports-cycle" src="/assets/about-sports-02.jpg" alt="Road bike parked in front of a green door.">
             <img class="about-sports-court" src="/assets/about-sports-03.png" alt="Indoor badminton court during a sports gala.">
           </div>
         </section>
@@ -83,5 +82,56 @@
         <a href="https://www.instagram.com/z000sh/" target="_blank" rel="noreferrer">Instagram</a>
       </nav>
     </footer>
+    <div class="copy-email-cursor" aria-hidden="true">
+      <span class="copy-email-icon">
+        <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+          <path d="M4 6h16v12H4z"></path>
+          <path d="m4 7 8 6 8-6"></path>
+        </svg>
+      </span>
+      <span class="copy-email-text">Copy Email</span>
+    </div>
+    <script>
+      const copyEmailLink = document.querySelector(".copy-email-link");
+      const copyEmailCursor = document.querySelector(".copy-email-cursor");
+      const copyEmailText = copyEmailCursor?.querySelector(".copy-email-text");
+
+      if (copyEmailLink && copyEmailCursor && copyEmailText) {
+        const moveCursor = (event) => {
+          copyEmailCursor.style.left = `${event.clientX + 14}px`;
+          copyEmailCursor.style.top = `${event.clientY - 22}px`;
+        };
+
+        copyEmailLink.addEventListener("mouseenter", (event) => {
+          copyEmailCursor.classList.add("is-visible");
+          copyEmailCursor.classList.remove("is-copied");
+          copyEmailText.textContent = "Copy Email";
+          moveCursor(event);
+        });
+
+        copyEmailLink.addEventListener("mousemove", moveCursor);
+
+        copyEmailLink.addEventListener("mouseleave", () => {
+          copyEmailCursor.classList.remove("is-visible", "is-copied");
+          copyEmailText.textContent = "Copy Email";
+        });
+
+        copyEmailLink.addEventListener("click", async (event) => {
+          moveCursor(event);
+          try {
+            await navigator.clipboard.writeText(copyEmailLink.dataset.email);
+          } catch {
+            const fallback = document.createElement("textarea");
+            fallback.value = copyEmailLink.dataset.email;
+            document.body.appendChild(fallback);
+            fallback.select();
+            document.execCommand("copy");
+            fallback.remove();
+          }
+          copyEmailCursor.classList.add("is-copied");
+          copyEmailText.textContent = "Email Copied!";
+        });
+      }
+    </script>
   </body>
 </html>

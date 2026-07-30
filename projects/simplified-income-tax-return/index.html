@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Scaling tax compliance through service design, a case study by Zersh Salman.">
     <title>Scaling tax compliance through service design | Zersh Salman</title>
-    <link rel="stylesheet" href="/styles.css?v=106">
+    <link rel="stylesheet" href="/styles.css?v=125">
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="/"><span>Zersh Salman</span><span>Product Designer</span></a>
       <nav aria-label="Primary navigation">
         <a href="/" aria-current="page">Work</a>
-        <a href="/fun/">Fun</a>
         <a href="/about/">About</a>
         <a href="/assets/Zersh-Salman-Resume.pdf">Resume</a>
       </nav>
@@ -37,8 +36,8 @@
         <section class="case-hero" id="overview">
           <p class="case-kicker">FCDO x ASI x FBR &bull; Shipped 2025</p>
           <h1>Scaling tax compliance through service design</h1>
-          <div class="case-visual media-cool">
-            <span>Scaling tax compliance through service design</span>
+          <div class="case-visual case-visual--video media-cool">
+            <video src="/assets/videos/simplified-cover.mov" autoplay muted loop playsinline preload="metadata"></video>
           </div>
           <dl class="case-detail-grid">
             <div>
@@ -238,7 +237,7 @@
           <p class="case-section-label">Design Decisions</p>
           <h2>Simplifying the experience required complicating the thinking.</h2>
           <p class="case-section-text">Every screen hides a problem that had to be solved before it could be designed.</p>
-          <div class="full-graphic-placeholder" aria-label="Graphic placeholder"></div>
+          <img class="case-section-graphic" src="/assets/design-decisions-field-mapping.png" alt="Field mapping matrix for property data design decisions.">
           <section class="case-subsection">
             <p class="case-section-label">Cracking the Property Schema</p>
             <h2>The discovery: Revenue leakage by design</h2>
@@ -276,21 +275,33 @@
             <p class="case-section-text">One schema. Every field structured. Every edge case solved.</p>
             <div class="decision-row-list">
               <article class="decision-row">
-                <div class="decision-visual-placeholder" aria-label="Visual placeholder"></div>
+                <div class="video-demo decision-video-demo" data-video-demo>
+                  <video class="design-goal-video decision-video" src="/assets/videos/resolution-3.mp4" width="458" height="286" autoplay muted loop playsinline preload="metadata"></video>
+                  <div class="video-controls" aria-label="Video controls">
+                    <button class="video-control" type="button" data-video-toggle aria-label="Pause video">Ⅱ</button>
+                    <button class="video-control" type="button" data-video-replay aria-label="Replay video">↻</button>
+                  </div>
+                </div>
                 <div>
                   <h3>One string to twelve structured data fields</h3>
                   <p>Old data sits at the top as reference. Below it, every property detail captured as a distinct structured field. Better tracking and verification of property ownership.</p>
                 </div>
               </article>
               <article class="decision-row">
-                <div class="decision-visual-placeholder" aria-label="Visual placeholder"></div>
+                <img class="decision-visual-image" src="/assets/no-more-ghost-properties.png" alt="Sold property flow in the redesigned income tax return">
                 <div>
                   <h3>No more ghost properties</h3>
                   <p>Property sold during the tax year, marked in one step, removed from the wealth statement automatically. What previously had no mechanism now has a clean, consequential interaction built around it.</p>
                 </div>
               </article>
               <article class="decision-row">
-                <div class="decision-visual-placeholder" aria-label="Visual placeholder"></div>
+                <div class="video-demo decision-video-demo" data-video-demo>
+                  <video class="design-goal-video decision-video" src="/assets/videos/resolution1.mov" width="458" height="286" autoplay muted loop playsinline preload="metadata"></video>
+                  <div class="video-controls" aria-label="Video controls">
+                    <button class="video-control" type="button" data-video-toggle aria-label="Pause video">Ⅱ</button>
+                    <button class="video-control" type="button" data-video-replay aria-label="Replay video">↻</button>
+                  </div>
+                </div>
                 <div>
                   <h3>Not every sale is complete</h3>
                   <p>Partial sales required their own logic. The sold portion is declared and closed. The retained portion carries forward. The taxpayer just marks the percentage, the return does the rest.</p>
@@ -304,7 +315,13 @@
           <p class="case-section-label">Content Design</p>
           <h2>Writing for taxpayers who don't speak tax</h2>
           <p class="case-section-text">Copy was treated with the same rigour as the screens themselves. Every label, instruction, and tooltip was drafted in multiple versions, reviewed for tone and clarity, and tracked meticulously before making it to the final design.</p>
-          <div class="full-graphic-placeholder" aria-label="Content design graphic placeholder"></div>
+          <div class="video-demo video-demo--wide case-full-video-demo content-design-video-demo" data-video-demo>
+            <video class="design-goal-video case-full-video" src="/assets/videos/content-design.mp4" autoplay muted loop playsinline preload="metadata"></video>
+            <div class="video-controls" aria-label="Video controls">
+              <button class="video-control" type="button" data-video-toggle aria-label="Pause video">Ⅱ</button>
+              <button class="video-control" type="button" data-video-replay aria-label="Replay video">↻</button>
+            </div>
+          </div>
           <p class="case-section-text">In Mural, my team lead and I would draft 3-4 versions of the same text string, compare them side by side, and pick the one that felt most natural to a first-time filer. Then we'd walk through the entire journey again to make sure it all sounded like one voice.</p>
         </section>
 
@@ -314,20 +331,26 @@
 
           <section class="case-subsection">
             <h3 class="case-small-heading">Clickable wasn't enough.</h3>
-            <p class="case-section-text">Time was ticking. We needed an interactive prototype for user testing. One where income figures carried forward across screens, fed calculations, and populated the wealth statement and withholding tax sections in real time. Figma couldn't do the job. So I picked <a class="dotted-link" href="https://www.justinmind.com/" target="_blank" rel="noreferrer">Justinmind</a>.</p>
-            <div class="full-graphic-placeholder" aria-label="Clickable prototype graphic placeholder"></div>
-          </section>
-
-          <section class="case-subsection">
-            <h3 class="case-small-heading">New tool to master in a week</h3>
-            <p class="case-section-text">One week sprint of familiarising myself with the events-based system: if/then conditional logic, global variables, and expression builders. Piece by piece, I replicated every flow. It felt less like prototyping and more like writing code with a visual interface. Surprisingly, I loved every minute of it.</p>
-            <div class="full-graphic-placeholder" aria-label="Justinmind learning sprint graphic placeholder"></div>
+            <p class="case-section-text">Income figures needed to carry forward, feed calculations, and populate sections in real time. Figma couldn't do that. So I picked <a class="dotted-link" href="https://www.justinmind.com/" target="_blank" rel="noreferrer">Justinmind</a>, and spent a week learning its events-based system, conditional logic, and expression builders from scratch. It felt less like prototyping and more like writing code. I loved every minute of it.</p>
+            <div class="video-demo video-demo--wide case-full-video-demo" data-video-demo>
+              <video class="design-goal-video case-full-video" src="/assets/videos/justinmind.mov" autoplay muted loop playsinline preload="metadata"></video>
+              <div class="video-controls" aria-label="Video controls">
+                <button class="video-control" type="button" data-video-toggle aria-label="Pause video">Ⅱ</button>
+                <button class="video-control" type="button" data-video-replay aria-label="Replay video">↻</button>
+              </div>
+            </div>
           </section>
 
           <section class="case-subsection">
             <h3 class="case-small-heading">117 bugs and counting</h3>
             <p class="case-section-text">We ended up not having enough time to do user testing before the fiscal year launch deadline. So testing became something else entirely. Systematic, documented, thorough. I identified more than one hundred functional and UI bugs and logged each one into the Azure DevOps environment where the development team operated.</p>
-            <div class="full-graphic-placeholder" aria-label="QA bugs and Azure DevOps graphic placeholder"></div>
+            <div class="video-demo video-demo--wide case-full-video-demo" data-video-demo>
+              <video class="design-goal-video case-full-video" src="/assets/videos/bug-tracker.mp4" autoplay muted loop playsinline preload="metadata"></video>
+              <div class="video-controls" aria-label="Video controls">
+                <button class="video-control" type="button" data-video-toggle aria-label="Pause video">Ⅱ</button>
+                <button class="video-control" type="button" data-video-replay aria-label="Replay video">↻</button>
+              </div>
+            </div>
           </section>
         </section>
 
@@ -336,7 +359,7 @@
           <h2>Every screen documented. Every requirement communicated.</h2>
           <p class="case-section-text">The Figma file was never going to be enough on its own. Every single screen was accompanied by a detailed specification.</p>
           <div class="video-demo video-demo--wide documentation-video-demo" data-video-demo>
-            <video class="design-goal-video" src="/assets/videos/documentation-video.mov" autoplay muted loop playsinline preload="metadata"></video>
+            <video class="design-goal-video documentation-video" src="/assets/videos/documentation-video.mov" autoplay muted loop playsinline preload="metadata"></video>
             <div class="video-controls" aria-label="Video controls">
               <button class="video-control" type="button" data-video-toggle aria-label="Pause video">Ⅱ</button>
               <button class="video-control" type="button" data-video-replay aria-label="Replay video">↻</button>
