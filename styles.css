@@ -55,6 +55,7 @@
   --line: #e3e7ec;
   --accent: #f12994;
   --max-width: 1980px;
+  --page-gutter: clamp(20px, 3.4vw, 68px);
 }
 
 * {
@@ -74,6 +75,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 a {
@@ -88,7 +90,7 @@ a:hover {
 .site-header,
 .site-footer,
 main {
-  width: min(var(--max-width), calc(100% - 68px));
+  width: min(var(--max-width), calc(100% - var(--page-gutter)));
   margin-inline: auto;
 }
 
@@ -136,6 +138,7 @@ nav {
   align-items: center;
   gap: 32px;
   flex-wrap: wrap;
+  max-width: 100%;
   font-family: "Geist Mono", "Geist Fallback", ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Monaco, Consolas, monospace;
 }
 
@@ -169,10 +172,11 @@ p {
 h1 {
   color: var(--text);
   font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
-  font-size: 56px;
+  font-size: clamp(40px, 4.1vw, 56px);
   line-height: 1.1;
   letter-spacing: -.02em;
   font-weight: 400;
+  overflow-wrap: break-word;
 }
 
 h2 {
@@ -424,16 +428,16 @@ p {
 
 .case-visual--video video {
   display: block;
-  inset: 50% auto auto 50%;
-  width: 768px !important;
-  height: 432px !important;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  inset: -1px;
+  width: calc(100% + 2px) !important;
+  height: calc(100% + 2px) !important;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.2)),
     linear-gradient(135deg, #eef1f6, #e8e6f1);
-  transform: translate(-50%, -50%);
+  transform: none;
 }
 
 .case-visual span {
@@ -490,10 +494,10 @@ p {
   margin: 16px 0;
   color: var(--text);
   font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
-  font-size: 32px;
+  font-size: clamp(28px, 3.5vw, 32px);
   font-weight: 400;
   letter-spacing: -.02em;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .case-small-heading {
@@ -636,13 +640,13 @@ p {
 
 .decision-row {
   display: grid;
-  grid-template-columns: 458px minmax(0, 1fr);
+  grid-template-columns: minmax(280px, 458px) minmax(0, 1fr);
   gap: 32px;
   align-items: end;
 }
 
 .decision-visual-placeholder {
-  width: 458px;
+  width: 100%;
   height: 250px;
   border: 1px solid var(--line);
   background: #eef1f6;
@@ -650,7 +654,7 @@ p {
 
 .decision-visual-image {
   display: block;
-  width: 458px;
+  width: 100%;
   height: 250px;
   object-fit: cover;
   border: 1px solid var(--line);
@@ -689,7 +693,7 @@ p {
 
 .reflection-grid {
   display: grid;
-  grid-template-columns: repeat(2, 340px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 48px;
   margin-top: 48px;
 }
@@ -808,14 +812,14 @@ p {
 
 .design-goal-row {
   display: grid;
-  grid-template-columns: 458px minmax(0, 1fr);
+  grid-template-columns: minmax(280px, 458px) minmax(0, 1fr);
   gap: 32px;
   align-items: end;
 }
 
 .video-demo {
   position: relative;
-  width: 458px;
+  width: 100%;
   height: 250px;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -823,7 +827,7 @@ p {
 
 .design-goal-video {
   display: block;
-  width: 458px;
+  width: 100%;
   height: 286px;
   object-fit: contain;
   background: #eef1f6;
@@ -835,7 +839,7 @@ p {
 }
 
 .video-placeholder {
-  width: 458px;
+  width: 100%;
   height: 250px;
   border: 1px solid var(--line);
   background: #eef1f6;
@@ -1007,7 +1011,7 @@ dd {
 
 .about-intro h1 {
   font-family: "Tiempos Text", "Tiempos Text Fallback", "Times New Roman", serif;
-  font-size: 56px;
+  font-size: clamp(40px, 4.1vw, 56px);
   line-height: 1.08;
   font-weight: 400;
 }
@@ -1211,72 +1215,221 @@ dd {
   color: var(--muted);
 }
 
-@media (max-width: 720px) {
+@media (max-width: 860px) {
   .site-header {
     align-items: flex-start;
-    padding-bottom: 64px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  body::before {
+    top: 98px;
   }
 
   .first-fold {
-    grid-template-columns: 1fr;
-    min-height: auto;
-    padding: 72px 0 64px;
+    padding-top: 92px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .case-page {
+    grid-template-columns: 240px minmax(0, 1fr);
   }
 
-  .timeline-item,
-  .case-row,
-  .project-caption {
+  .case-side-nav nav {
+    font-size: 15px;
+  }
+
+  .case-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .first-fold {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 48px;
+    align-items: start;
+    padding-top: 112px;
+  }
+
+  .hero {
+    max-width: 760px;
+  }
+
+  .timeline {
+    max-width: 760px;
   }
 
   .projects {
     grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .project-caption {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
   }
 
   .project-caption p {
     text-align: left;
   }
 
-  .meta-list {
-    grid-template-columns: 1fr;
-  }
-
   .case-page {
     grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .case-side-nav {
     position: static;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
     padding-top: 32px;
+  }
+
+  .case-side-nav nav {
+    display: flex;
+    gap: 18px;
+    margin-top: 0;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .case-content {
+    width: 100%;
+  }
+
+  .case-hero {
+    padding-top: 40px;
+  }
+
+  .opportunity-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .design-goal-row,
+  .decision-row {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .video-demo {
+    height: auto;
+    aspect-ratio: 458 / 250;
+  }
+
+  .design-goal-video {
+    height: auto;
+    aspect-ratio: 458 / 286;
+  }
+
+  .decision-visual-placeholder,
+  .decision-visual-image {
+    height: auto;
+    aspect-ratio: 458 / 250;
+  }
+
+  .reflection-grid {
+    gap: 32px;
+  }
+
+  .about-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    align-items: flex-start;
+    padding: 24px 0 24px;
+  }
+
+  body::before {
+    top: 98px;
+  }
+
+  nav {
+    gap: 18px;
+  }
+
+  .first-fold {
+    min-height: auto;
+    padding: 78px 0 64px;
+  }
+
+  .timeline-item,
+  .case-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .timeline-item {
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+
+  .timeline-item:first-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .meta-list {
+    grid-template-columns: 1fr;
+  }
+
+  .case-side-nav {
+    display: block;
   }
 
   .case-side-nav nav {
     display: none;
   }
 
+  .case-hero {
+    padding: 36px 0;
+  }
+
   .case-detail-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .opportunity-grid {
+  .domain-image-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 20px;
   }
 
-  .design-goal-row {
+  .full-graphic-placeholder {
+    min-height: 280px;
+  }
+
+  .hover-note img {
+    width: min(220px, calc(100vw - 48px));
+  }
+
+  .reflection-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 
-  .design-goal-video {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 458 / 286;
+  .about-intro {
+    padding-top: 48px;
+    padding-bottom: 40px;
   }
 
-  .video-demo {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 458 / 250;
+  .about-gallery-grid {
+    margin-top: 64px;
+    padding-bottom: 88px;
+  }
+
+  .about-image-row {
+    gap: 10px;
   }
 
   .site-footer {
@@ -1286,10 +1439,8 @@ dd {
 }
 
 @media (max-width: 460px) {
-  .site-header,
-  .site-footer,
-  main {
-    width: min(var(--max-width), calc(100% - 28px));
+  :root {
+    --page-gutter: 28px;
   }
 
   .site-header {
@@ -1297,7 +1448,45 @@ dd {
     gap: 14px;
   }
 
+  .brand {
+    gap: 8px;
+  }
+
   h1 {
-    font-size: 48px;
+    font-size: 36px;
+  }
+
+  .project-grid {
+    padding-bottom: 72px;
+  }
+
+  .case-overview {
+    padding-bottom: 40px;
+  }
+
+  .case-overview h2 {
+    font-size: 28px;
+  }
+
+  .case-small-heading,
+  .decision-row h3,
+  .reflection-grid h3 {
+    font-size: 20px;
+  }
+
+  .opportunity-grid h3,
+  .design-goal-row h3 {
+    font-size: 21px;
+  }
+
+  .domain-image-grid {
+    padding: 14px;
+  }
+
+  .about-image-row {
+    grid-template-columns: repeat(3, minmax(96px, 1fr));
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
   }
 }
